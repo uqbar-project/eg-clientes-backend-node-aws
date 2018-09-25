@@ -13,8 +13,11 @@ export default class CustomerService {
         debug: false
     })
 
-    findAll(callback: any) {
+    constructor() {
         this.connection.connect()
+    }
+
+    findAll(callback: any) {
         this.connection.query('SELECT * FROM clientes', function(err, rows, fields) {
             const customers : Customer[] = rows.map((row: any) => new Customer(row.id, row.nombre))
             callback(err, customers)

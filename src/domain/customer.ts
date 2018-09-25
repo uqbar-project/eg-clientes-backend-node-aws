@@ -7,7 +7,7 @@ export default class Customer {
         this.name = _nombre
     }
 
-    validar() {
+    validate() {
         if (!this.name) throw "Debe ingresar nombre"
     }
 
