@@ -1,7 +1,7 @@
 import express from 'express'
 import CustomerService from './services'
-import { OK } from '../services/httpResponse'
-import errorHandler from '../services/errorHandler';
+import errorHandler from '../services/errorHandler'
+import httpStatus from 'http-status'
 
 export const customerRoutes = express.Router()
 
@@ -10,7 +10,7 @@ const customerService = new CustomerService()
 customerRoutes.get('/', async(req, res) => {
   customerService.findAll((customers : any) => {
     res
-      .status(OK)
+      .status(httpStatus.OK)
       .json(customers)
   }, 
     errorHandler.bind(null, res)

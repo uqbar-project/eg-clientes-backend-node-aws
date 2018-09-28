@@ -1,7 +1,7 @@
 import Sequelize from 'sequelize'
 
 const sequelize = new Sequelize('sys', 'root', '12345678', {
-    host: 'pinada.cgetf2qp59ke.us-east-2.rds.amazonaws.com',
+    host: 'pinada-free.cj4oaiqdteuw.us-east-1.rds.amazonaws.com',
     dialect: 'mysql',
     operatorsAliases: false,
     pool: {
