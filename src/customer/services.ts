@@ -1,4 +1,4 @@
-import dbConnection from './dbConnection'
+import dbConnection from '../services/dbConnection'
 import Sequelize from 'sequelize'
 
 export default class CustomerService {
@@ -15,8 +15,8 @@ export default class CustomerService {
             }
         })
 
-    findAll(callback: any) {
-        this.Customer.findAll().then( customers => callback(customers) )
+    findAll(callbackOk: any, callbackError: any) {
+        this.Customer.findAll().then( customers => callbackOk(customers) ).catch( error => callbackError(error) )
     }
     
 }
